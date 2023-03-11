@@ -1,0 +1,44 @@
+ALGORITHM algo_linear
+
+VAR 
+   phrase : STRING; //variable d'entrée
+   nbr_mot : INTEGER; //variable de sortie
+   nbr_voyelles : INTEGER; //variable de sortie
+   nbr_carac : INTEGER; //variable de sortie
+BEGIN
+   REPEAT
+      write("Ecrivez une phrase: ")
+      Read(phrase)
+   UNTIL (phrase[phrase.length-1] <> ".")
+      
+   END
+
+   i:= 0
+   WHILE (i < phrase.length) DO
+
+      //compter de nombre de mots
+      IF ( phrase[i] = " ") THEN
+         nbr_mot := nbr_mot + 1
+
+         //compter le nombre de voyelles
+      ELSE_IF (phrase[i] = "a" OR phrase[i] = "u" OR phrase[i] = "e" OR phrase[i] = "i" OR phrase[i] = "y" OR phrase[i] = "o")
+         nbr_voyelles := nbr_voyelles + 1   
+      END_IF
+
+      i := i + 1
+   END_WHILE
+   
+   //nombre de caracteres
+   nbr_carac := phrase.length
+
+   write ("le nombre de mots est de ", nbr_mot)
+   write ("le nombre de voyelles est de", nbr_voyelles)
+   write ("le nombre de caracteres est de", nbr_carac)
+
+END
+
+
+
+
+
+      

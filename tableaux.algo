@@ -1,0 +1,34 @@
+ALGORITHM set_elements
+
+VAR
+   set1 : ARRAY_OF INTEGER [5]
+   set2 : ARRAY_OF INTEGER [4]
+   distinct_elements : ARRAY_OF INTEGER [5]
+   sum : INTEGER
+   isDistinct : BOOLEAN := true 
+
+BEGIN
+   FOR i FROM 0 TO set1.length -1 STEP 1 DO 
+      FOR j FROM 0 TO set2.length -1 STEP 1 DO
+         IF (set1[i] = set2[j])THEN
+         isDistinct = false
+         break;
+         END_IF 
+      END_FOR
+      IF(isDistinct = true)THEN 
+         sum = sum + set1[i]
+      END_IF
+   END_FOR
+   FOR j FROM 0 TO set2.length -1 STEP 1 DO  
+      FOR i FROM 0 TO set1.length -1 STEP 1 DO 
+         IF (set2[j]  = set1[i]) THEN
+         isDistinct = false
+         break;
+         END_IF
+      END_FOR
+      IF (isDistinct = true) THEN 
+         sum = sum + set2[j]
+      END_IF 
+   END_FOR
+
+END 
